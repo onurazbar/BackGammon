@@ -1,6 +1,6 @@
 /*
  *
- * @file Color.hpp
+ * @file  Color.hpp
  * @brief This file defines colors.
  *
  */
