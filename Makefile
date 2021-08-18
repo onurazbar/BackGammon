@@ -22,5 +22,11 @@ $(OBJDIR):
 $(OBJDIR)/Main.o: $(SRCDIR)/Main.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+$(OBJDIR)/Player.o: $(SRCDIR)/Player.cpp $(SRCDIR)/Player.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJDIR)/Disc.o: $(SRCDIR)/Disc.cpp $(SRCDIR)/Disc.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 clean:
 	rm -rf $(BINDIR) $(OBJDIR)
