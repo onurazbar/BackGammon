@@ -22,7 +22,7 @@ $(OBJDIR):
 $(OBJDIR)/Main.o: $(SRCDIR)/Main.cpp $(OBJDIR)/Game.o
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJDIR)/Game.o: $(SRCDIR)/Game.cpp $(SRCDIR)/Game.hpp $(OBJDIR)/Board.o
+$(OBJDIR)/Game.o: $(SRCDIR)/Game.cpp $(SRCDIR)/Game.hpp $(OBJDIR)/Board.o $(OBJDIR)/Player.o
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJDIR)/Board.o: $(SRCDIR)/Board.cpp $(SRCDIR)/Board.hpp
