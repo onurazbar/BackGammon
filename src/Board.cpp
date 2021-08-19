@@ -77,8 +77,3 @@ void Board::drawBoard()
         std::cout << std::endl;
     }
 }
-
-void Board::placeDiscs()
-{
-
-}

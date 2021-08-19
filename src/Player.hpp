@@ -20,6 +20,11 @@ private:
     int disc_count;
 
     /**
+     * Size of the disc positions.
+     */
+    const int disc_positions_size;
+
+    /**
      * @brief Color of the player's discs.
      */
     ColorType player_color;
@@ -27,9 +32,14 @@ private:
 public:
 
     /**
+     * Stores the number of discs at each position.
+     */
+    int disc_positions[24];
+
+    /**
      * @brief Default constructor.
      */
-    Player();
+    Player(bool computer);
 
     /**
      * @brief Destructor

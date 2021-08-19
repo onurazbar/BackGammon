@@ -22,12 +22,12 @@ private:
      */
     const int board_width;
 
+public:
+
     /**
      * @brief Board view.
      */
     char board_view[22][21];
-
-public:
 
     /**
      * @brief Default constructor.
@@ -43,11 +43,6 @@ public:
      * @brief Draws the board on terminal.
      */
     void drawBoard();
-
-    /**
-     * @brief Place the discs on the board.
-     */
-    void placeDiscs();
 };
 
 #endif /* BOARD_HPP_INCLUDED */
