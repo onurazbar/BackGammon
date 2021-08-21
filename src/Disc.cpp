@@ -6,9 +6,16 @@
 
 #include "Disc.hpp"
 
-
-Disc::Disc()
+Disc::Disc(const ColorType& disc_color): disc_color(disc_color)
 {
+    if (disc_color == blue)
+    {
+        disc_symbol = blue_disc_symbol;
+    }
+    else
+    {
+        disc_symbol = red_disc_symbol;
+    }
 }
 
 Disc::~Disc()
@@ -25,12 +32,12 @@ void Disc::setDiscColor(const ColorType& color)
     disc_color = color;
 }
 
-std::string Disc::getDiscSymbol()
+char Disc::getDiscSymbol()
 {
     return disc_symbol;
 }
 
-void Disc::setDiscSymbol(const std::string& symbol)
+void Disc::setDiscSymbol(const char& symbol)
 {
     disc_symbol = symbol;
 }

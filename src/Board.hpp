@@ -8,6 +8,8 @@
 #ifndef BOARD_HPP_INCLUDED
 #define BOARD_HPP_INCLUDED
 
+#include "Disc.hpp"
+
 class Board
 {
 private:
@@ -43,6 +45,11 @@ public:
      * @brief Draws the board on terminal.
      */
     void drawBoard();
+
+    /**
+     * @brief Place the discs on the board.
+     */
+    void placeDisc(unsigned int x, unsigned int y, Disc disc);
 };
 
 #endif /* BOARD_HPP_INCLUDED */

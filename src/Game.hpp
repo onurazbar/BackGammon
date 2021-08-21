@@ -8,8 +8,11 @@
 #ifndef GAME_HPP_INCLUDED
 #define GAME_HPP_INCLUDED
 
+#include <vector>
+
 #include "Board.hpp"
-#include "Player.hpp"
+#include "Computer.hpp"
+#include "Human.hpp"
 
 class Game
 {
@@ -23,22 +26,32 @@ private:
     /**
      * @brief Player that is controlled by computer.
      */
-    std::unique_ptr<Player> computer;
+    std::unique_ptr<Computer> computer;
 
     /**
      * @brief Player that is controlled by human.
      */
-    std::unique_ptr<Player> human;
+    std::unique_ptr<Human> human;
 
     /**
-     * Dices of the game. Their range is [1,6].
+     * @brief 2-D vector for disc places.
+     */
+    std::vector<std::vector<Disc>> disc_places;
+
+    /**
+     * @brief Dices of the game. Their range is [1,6].
      */
     int dices[2];
 
     /**
-     * @brief Place the discs on the board.
+     * @brief Initializes disc positions before starting the game.
      */
-    void placeDiscs();
+    void initializeDiscPositions();
+
+    /**
+     * @brief Updates game view on screen;
+     */
+    void updateView();
 
 public:
 

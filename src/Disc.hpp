@@ -22,14 +22,14 @@ private:
     /**
      * @brief Symbol of the disc.
      */
-    std::string disc_symbol;
+    char disc_symbol;
 
 public:
 
     /**
      * @brief Default constructor.
      */
-    Disc();
+    Disc(const ColorType& disc_color);
 
     /**
      * @brief Destructor.
@@ -52,13 +52,13 @@ public:
      * @brief Returns Disc Symbol.
      * @return Symbol of the disc.
      */
-    std::string getDiscSymbol();
+    char getDiscSymbol();
 
     /**
      * @brief Sets disc symbol.
      * @param Symbol to be set.
      */
-    void setDiscSymbol(const std::string& symbol);
+    void setDiscSymbol(const char& symbol);
 };
 
 #endif /* DISC_HPP_INCLUDED */

@@ -8,21 +8,19 @@
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
+#include <vector>
+
 #include "Color.hpp"
+#include "Disc.hpp"
 
 class Player
 {
-private:
+protected:
 
     /**
      * @brief Number of the discs of the player.
      */
     int disc_count;
-
-    /**
-     * Size of the disc positions.
-     */
-    const int disc_positions_size;
 
     /**
      * @brief Color of the player's discs.
@@ -32,19 +30,14 @@ private:
 public:
 
     /**
-     * Stores the number of discs at each position.
-     */
-    int disc_positions[24];
-
-    /**
      * @brief Default constructor.
      */
-    Player(bool computer);
+    Player(const ColorType& color_type);
 
     /**
      * @brief Destructor
      */
-    ~Player();
+    virtual ~Player();
 
     /**
      * @brief Returns disc count.
@@ -69,6 +62,12 @@ public:
      * @param Color of the player to be set.
      */
     void setPlayerColor(const ColorType& color);
+
+    /**
+     * @brief Makes the corresponding disc move according to the dieces.
+     * @param disc_places Places of the discs that move on.
+     */
+    virtual void makeMove(std::vector<std::vector<Disc>>& disc_places) = 0;
 };
 
 #endif /* PLAYER_HPP_INCLUDED */

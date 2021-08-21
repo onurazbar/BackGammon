@@ -22,10 +22,16 @@ $(OBJDIR):
 $(OBJDIR)/Main.o: $(SRCDIR)/Main.cpp $(OBJDIR)/Game.o
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJDIR)/Game.o: $(SRCDIR)/Game.cpp $(SRCDIR)/Game.hpp $(OBJDIR)/Board.o $(OBJDIR)/Player.o
+$(OBJDIR)/Game.o: $(SRCDIR)/Game.cpp $(SRCDIR)/Game.hpp $(OBJDIR)/Board.o $(OBJDIR)/Human.o $(OBJDIR)/Computer.o
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJDIR)/Board.o: $(SRCDIR)/Board.cpp $(SRCDIR)/Board.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJDIR)/Human.o: $(SRCDIR)/Human.cpp $(SRCDIR)/Human.hpp $(OBJDIR)/Player.o
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJDIR)/Computer.o: $(SRCDIR)/Computer.cpp $(SRCDIR)/Computer.hpp $(OBJDIR)/Player.o
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJDIR)/Player.o: $(SRCDIR)/Player.cpp $(SRCDIR)/Player.hpp $(SRCDIR)/Color.hpp

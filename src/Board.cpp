@@ -77,3 +77,32 @@ void Board::drawBoard()
         std::cout << std::endl;
     }
 }
+
+void Board::placeDisc(unsigned int x, unsigned int y, Disc disc)
+{
+    unsigned int i = 0;
+    unsigned int j = 0;
+
+    if ((x >= 0) && (x <= 5))
+    {
+        i = y + 1;
+        j = x + 3;
+    }
+    else if ((x >= 6) && (x <= 11))
+    {
+        i = y + 1;
+        j = x + 6;
+    }
+    else if ((x >= 12) && (x <= 17))
+    {
+        i = board_height - y - 2;
+        j = 23 - x + 6;
+    }
+    else if ((x >= 18) && (x <= 23))
+    {
+        i = board_height - y - 2;
+        j = 23 - x + 3;
+    }
+
+    board_view[i][j] = disc.getDiscSymbol();
+}
