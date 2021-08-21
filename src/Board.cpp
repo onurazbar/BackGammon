@@ -36,9 +36,6 @@ Board::Board() : board_height(22), board_width(21)
             "|||||||||||||||||||||"
     };*/
 
-    std::cout << "board_height: " << board_height << std::endl;
-    std::cout << "board_width: " << board_width << std::endl;
-
     for (int i = 0; i < board_height; i++)
     {
         for (int j = 0; j < board_width; j++)
@@ -68,6 +65,8 @@ Board::~Board()
 
 void Board::drawBoard()
 {
+    std::cout << std::endl;
+
     for (int i = 0; i < board_height; i++)
     {
         for (int j = 0; j < board_width; j++)
@@ -76,6 +75,8 @@ void Board::drawBoard()
         }
         std::cout << std::endl;
     }
+
+    std::cout << std::endl;
 }
 
 void Board::placeDisc(unsigned int x, unsigned int y, Disc disc)
