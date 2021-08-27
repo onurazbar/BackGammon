@@ -5,7 +5,7 @@ This is a console based backgammon game! Game software is developed via C++ upon
 
 ## Project Scheme
 
-All source(.cpp) and header(.hpp) files are placed inside the source folder **src**. There is also **GameView** folder that contains some gameplay scenes but I do not prefer to add to the repo. So it is ignored inside gitignore. Besides there are also **Makefile** and **README** files.
+All source(.cpp) and header(.hpp) files are placed inside the source folder **src**. There is also **GameView** folder that contains some game scenes but I do not prefer to add to the repo. So it is ignored inside gitignore. Besides there are also **Makefile** and **README** files.
 
 
 ## Build Instructions
