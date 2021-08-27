@@ -42,6 +42,11 @@ public:
     ~Board();
 
     /**
+     * @brief Clears disc positions on board.
+     */
+    void clearBoard();
+
+    /**
      * @brief Draws the board on terminal.
      */
     void drawBoard();

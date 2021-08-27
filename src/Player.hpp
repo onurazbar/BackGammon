@@ -8,6 +8,7 @@
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
+#include <array>
 #include <vector>
 
 #include "Color.hpp"
@@ -66,8 +67,9 @@ public:
     /**
      * @brief Makes the corresponding disc move according to the dieces.
      * @param disc_places Places of the discs that move on.
+     * @param dices Current dices after rolling.
      */
-    virtual void makeMove(std::vector<std::vector<Disc>>& disc_places) = 0;
+    virtual void makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices) = 0;
 };
 
 #endif /* PLAYER_HPP_INCLUDED */

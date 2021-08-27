@@ -12,7 +12,7 @@
 
 int main()
 {
-    std::cout << "BackGammon game!" << std::endl;
+    std::cout << "BackGammon game!" << std::endl << std::endl;
 
     std::unique_ptr<Game> game(new Game());
 

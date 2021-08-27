@@ -63,6 +63,21 @@ Board::~Board()
 {
 }
 
+void Board::clearBoard()
+{
+    for (int i = 0; i < board_height; i++)
+    {
+        for (int j = 0; j < board_width; j++)
+        {
+            if (((i > 0) && i < (board_height - 1)) &&
+                (((j > 2) && (j < 9)) || ((j > 11) && (j < 18))))
+            {
+                board_view[i][j] = ' ';
+            }
+        }
+    }
+}
+
 void Board::drawBoard()
 {
     std::cout << std::endl;

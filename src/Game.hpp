@@ -8,6 +8,7 @@
 #ifndef GAME_HPP_INCLUDED
 #define GAME_HPP_INCLUDED
 
+#include <array>
 #include <vector>
 
 #include "Board.hpp"
@@ -39,9 +40,14 @@ private:
     std::vector<std::vector<Disc>> disc_places;
 
     /**
+     * @brief Indicates that whether game is finished or not.
+     */
+    bool game_finished;
+
+    /**
      * @brief Dices of the game. Their range is [1,6].
      */
-    int dices[2];
+    std::array<int, 2> dices;
 
     /**
      * @brief Initializes disc positions before starting the game.
@@ -52,6 +58,11 @@ private:
      * @brief Updates game view on screen;
      */
     void updateView();
+
+    /**
+     * @brief Rolls the dices.
+     */
+    void rollDices();
 
 public:
 

@@ -27,8 +27,9 @@ public:
     /**
      * @brief Makes the corresponding disc move according to the dieces.
      * @param disc_places Places of the discs that move on.
+     * @param dices Current dices after rolling.
      */
-    void makeMove(std::vector<std::vector<Disc>>& disc_places);
+    void makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices);
 };
 
 #endif /* COMPUTER_HPP_INCLUDED */

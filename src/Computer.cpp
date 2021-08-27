@@ -15,7 +15,7 @@ Computer::~Computer()
 {
 }
 
-void Computer::makeMove(std::vector<std::vector<Disc>>& disc_places)
+void Computer::makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices)
 {
 
 }
