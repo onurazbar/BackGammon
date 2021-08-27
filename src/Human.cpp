@@ -17,18 +17,43 @@ Human::~Human()
 {
 }
 
-void Human::makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices)
+bool Human::checkSelectionValid(std::vector<std::vector<Disc>>& disc_places, const int& dice, const int& position)
+{
+    if (std::cin.fail())
+    {
+        return false;
+    }
+
+    if (disc_places[position].empty())
+    {
+        return false;
+    }
+
+    if (disc_places[position][0].getDiscColor() == red)
+    {
+        return false;
+    }
+
+    if ((!disc_places[position + dice].empty()) &&
+        (disc_places[position + dice][0].getDiscColor() == red) &&
+        (disc_places[position + dice].size() > 1))
+    {
+        return false;
+    }
+
+    return true;
+}
+
+void Human::makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice)
 {
     std::cout << "Please take action according to current dice values." << std::endl;
-    std::cout << "First dice is " << dices[0] << std::endl;
-    std::cout << "Select a disc position to move a disc according to first dice value." << std::endl;
+    std::cout << "Dice is " << dice << std::endl;
+    std::cout << "Select a disc position to move a disc according to dice value." << std::endl;
 
     int position;
     std::cin >> position;
 
-    while (std::cin.fail() ||
-           disc_places[position].empty() ||
-           (disc_places[position][0].getDiscColor() == red))
+    while (!checkSelectionValid(disc_places, dice, position))
     {
         std::cin.clear();
         std::cin.ignore(256,'\n');
@@ -37,5 +62,5 @@ void Human::makeMove(std::vector<std::vector<Disc>>& disc_places, const std::arr
     }
 
     disc_places[position].pop_back();
-    disc_places[position + dices[0]].push_back(Disc(blue));
+    disc_places[position + dice].push_back(Disc(blue));
 }

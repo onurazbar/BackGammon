@@ -168,13 +168,27 @@ void Game::play()
     while (!game_finished)
     {
         std::cout << "Your turn, press any key to roll the dices." << std::endl;
-
         std::cin.get();
 
         rollDices();
 
-        human->makeMove(disc_places, dices);
+        for (auto i : dices)
+        {
+            human->makeMove(disc_places, i);
+            updateView();
+        }
 
-        updateView();
+        std::cin.clear();
+        std::cin.ignore(256,'\n');
+        std::cout << "Computer's turn, press any key to let computer to roll the dices." << std::endl;
+        std::cin.get();
+
+        rollDices();
+
+        for (auto i : dices)
+        {
+            computer->makeMove(disc_places, i);
+            updateView();
+        }
     }
 }

@@ -19,6 +19,11 @@ class Player
 protected:
 
     /**
+     * @brief Number of the broken discs of the player.
+     */
+    int broken_disc_count;
+
+    /**
      * @brief Number of the discs of the player.
      */
     int disc_count;
@@ -39,6 +44,18 @@ public:
      * @brief Destructor
      */
     virtual ~Player();
+
+    /**
+     * @brief Returns broken disc count.
+     * @return Number of the broken discs.
+     */
+    int getBrokenDiscCount();
+
+    /**
+     * @brief Sets broken disc count.
+     * @param Number of the broken discs to be set.
+     */
+    void setBrokenDiscCount(const int& count);
 
     /**
      * @brief Returns disc count.
@@ -69,7 +86,7 @@ public:
      * @param disc_places Places of the discs that move on.
      * @param dices Current dices after rolling.
      */
-    virtual void makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices) = 0;
+    virtual void makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice) = 0;
 };
 
 #endif /* PLAYER_HPP_INCLUDED */

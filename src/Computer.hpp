@@ -29,7 +29,7 @@ public:
      * @param disc_places Places of the discs that move on.
      * @param dices Current dices after rolling.
      */
-    void makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices);
+    void makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice);
 };
 
 #endif /* COMPUTER_HPP_INCLUDED */

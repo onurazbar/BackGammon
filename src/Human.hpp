@@ -12,6 +12,16 @@
 
 class Human: public Player
 {
+private:
+
+    /**
+     * @brief Checks whether the selection is valid or not.
+     * @param disc_places Places of the discs that move on.
+     * @param dice Current dice after rolling.
+     * @return Whether the selection is valid or not.
+     */
+    bool checkSelectionValid(std::vector<std::vector<Disc>>& disc_places, const int& dice, const int& position);
+
 public:
 
     /**
@@ -27,9 +37,9 @@ public:
     /**
      * @brief Makes the corresponding disc move according to the dieces.
      * @param disc_places Places of the discs that move on.
-     * @param dices Current dices after rolling.
+     * @param dice Current dice after rolling.
      */
-    void makeMove(std::vector<std::vector<Disc>>& disc_places, const std::array<int, 2>& dices);
+    void makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice);
 };
 
 #endif /* HUMAN_HPP_INCLUDED */
