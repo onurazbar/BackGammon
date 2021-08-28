@@ -5,6 +5,8 @@
  *
  */
 
+#include <iostream>
+
 #include "Player.hpp"
 
 Player::Player(const ColorType& color_type) : broken_disc_count(0), disc_count(15), player_color(color_type)
@@ -43,4 +45,14 @@ ColorType Player::getPlayerColor()
 void Player::setPlayerColor(const ColorType& color)
 {
     player_color = color;
+}
+
+std::shared_ptr<Player> Player::getOpponent()
+{
+    return opponent;
+}
+
+void Player::setOpponent(const std::shared_ptr<Player>& opponent)
+{
+    this->opponent = opponent;
 }

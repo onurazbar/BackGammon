@@ -18,6 +18,9 @@ Game::Game() : game_finished(false)
     computer.reset(new Computer());
     human.reset(new Human());
 
+    computer->setOpponent(human);
+    human->setOpponent(computer);
+
     initializeDiscPositions();
 
     std::srand(std::time(0));
@@ -157,7 +160,6 @@ void Game::play()
 {
     std::cout << "Welcome console based backgammon game!" << std::endl;
     std::cout << "Press any key to start the game!" << std::endl;
-
     std::cin.get();
 
     updateView();
@@ -176,6 +178,18 @@ void Game::play()
         {
             human->makeMove(disc_places, i);
             updateView();
+
+            if (computer->getBrokenDiscCount())
+            {
+                std::cout << "Broken discs of the computer: ";
+
+                for (int i = 0; i < computer->getBrokenDiscCount(); i++)
+                {
+                    std::cout << red_disc_symbol << " ";
+                }
+
+                std::cout << std::endl;
+            }
         }
 
         std::cin.clear();
@@ -189,6 +203,18 @@ void Game::play()
         {
             computer->makeMove(disc_places, i);
             updateView();
+
+            if (human->getBrokenDiscCount())
+            {
+                std::cout << "Broken discs of the computer: ";
+
+                for (int i = 0; i < human->getBrokenDiscCount(); i++)
+                {
+                    std::cout << blue_disc_symbol << " ";
+                }
+
+                std::cout << std::endl;
+            }
         }
     }
 }

@@ -9,6 +9,7 @@
 #define PLAYER_HPP_INCLUDED
 
 #include <array>
+#include <memory>
 #include <vector>
 
 #include "Color.hpp"
@@ -32,6 +33,19 @@ protected:
      * @brief Color of the player's discs.
      */
     ColorType player_color;
+
+    /**
+     * @brief Opponent of the player.
+     */
+    std::shared_ptr<Player> opponent;
+
+    /**
+     * @brief Checks and breaks if there is a single opponent disc on the position.
+     * @param disc_places Places of the discs.
+     * @param position Position at table to check for broke.
+     * @return True If opponent's disc is broken.
+     */
+    virtual bool checkAndBreakOpponentDisc(std::vector<std::vector<Disc>>& disc_places, const int& position) = 0;
 
 public:
 
@@ -82,9 +96,21 @@ public:
     void setPlayerColor(const ColorType& color);
 
     /**
+     * @brief Returns opponent of the player.
+     * @return Opponent of the player.
+     */
+    std::shared_ptr<Player> getOpponent();
+
+    /**
+     * @brief Sets opponent of the player.
+     * @param Opponent of the player.
+     */
+    void setOpponent(const std::shared_ptr<Player>& opponent);
+
+    /**
      * @brief Makes the corresponding disc move according to the dieces.
      * @param disc_places Places of the discs that move on.
-     * @param dices Current dices after rolling.
+     * @param dice Current dice after rolling.
      */
     virtual void makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice) = 0;
 };

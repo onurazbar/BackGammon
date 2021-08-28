@@ -27,12 +27,12 @@ private:
     /**
      * @brief Player that is controlled by computer.
      */
-    std::unique_ptr<Computer> computer;
+    std::shared_ptr<Computer> computer;
 
     /**
      * @brief Player that is controlled by human.
      */
-    std::unique_ptr<Human> human;
+    std::shared_ptr<Human> human;
 
     /**
      * @brief 2-D vector for disc places.
