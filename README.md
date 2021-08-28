@@ -43,6 +43,8 @@ The game mode is single player and you will play againts the computer. To make f
 
 Some game scenes and a simple gameplay video are below.
 
+### Game Scenes
+
 ![View_3](https://user-images.githubusercontent.com/34675907/131226673-ad36d216-beff-44bc-951f-840b2a5cca02.png)
 
 ![View_4](https://user-images.githubusercontent.com/34675907/131226681-d653a319-1fd2-4ad7-aad2-9a68fae4a305.png)
@@ -50,6 +52,8 @@ Some game scenes and a simple gameplay video are below.
 ![View_5](https://user-images.githubusercontent.com/34675907/131226686-563c093a-4d7f-4c9c-b5db-f3385332c99f.png)
 
 ![View_6](https://user-images.githubusercontent.com/34675907/131226687-9413d5bc-ff26-445f-8547-5c402e951d8c.png)
+
+### Gameplay video
 
 ![GamePlay_1](https://user-images.githubusercontent.com/34675907/131230158-60065162-a1b8-4b47-aef3-dc4fba69939a.gif)
 
