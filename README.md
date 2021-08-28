@@ -39,4 +39,15 @@ When you build the project, executable game file **backgammon** will be created 
 The game mode is single player and you will play againts the computer. To make following the gameplay easier, at each step, game is stopped and not proceed until you press a key. Therefore you need to press a key for the actions to be taken like rolling the dices, letting computer to roll dices and making its moves etc. At each step, several instructions will be displayed and following those will be enough to play the game.
 
 
-In progress!
+## Game Views
+
+Some game scenes and a simple gameplay video are below.
+
+![View_3](https://user-images.githubusercontent.com/34675907/131226673-ad36d216-beff-44bc-951f-840b2a5cca02.png)
+
+![View_4](https://user-images.githubusercontent.com/34675907/131226681-d653a319-1fd2-4ad7-aad2-9a68fae4a305.png)
+
+![View_5](https://user-images.githubusercontent.com/34675907/131226686-563c093a-4d7f-4c9c-b5db-f3385332c99f.png)
+
+![View_6](https://user-images.githubusercontent.com/34675907/131226687-9413d5bc-ff26-445f-8547-5c402e951d8c.png)
+
