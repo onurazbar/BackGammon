@@ -29,14 +29,14 @@ This will remove **bin** and **obj** folders and all their contents. Then type *
 
 ## Game Instructions
 
-When you build the project, executable game file **backgammon** will be created under **bin** folder. To run the game go to **bin** folder run the executable file like below;
+When you build the project, executable game file **backgammon** will be created under **bin** folder. To run the game go to **bin** folder and run the executable file like below;
 
 **./backgammon**
 
 ![View_2](https://user-images.githubusercontent.com/34675907/131223184-677afcaa-1003-44a6-a456-8443435898db.png)
 
 
-The game mode is single player and you will play againts the computer. To make following the gameplay easier, at each step game is stopped and not proceed until you press a key. Therefore you need to press a key for the actions to be taken like rolling the dices, letting computer to roll dices and making its moves etc. At each step several instructions will be displayed and following them will be enough to play the game.
+The game mode is single player and you will play againts the computer. To make following the gameplay easier, at each step, game is stopped and not proceed until you press a key. Therefore you need to press a key for the actions to be taken like rolling the dices, letting computer to roll dices and making its moves etc. At each step several instructions will be displayed and following those will be enough to play the game.
 
 
 In progress!
