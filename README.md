@@ -51,7 +51,7 @@ Some game scenes and a simple gameplay video are below.
 
 ![View_6](https://user-images.githubusercontent.com/34675907/131226687-9413d5bc-ff26-445f-8547-5c402e951d8c.png)
 
-https://user-images.githubusercontent.com/34675907/131227015-f74da507-6127-418b-8a09-d51beb3e0e35.mp4
+![GamePlay_1](https://user-images.githubusercontent.com/34675907/131230158-60065162-a1b8-4b47-aef3-dc4fba69939a.gif)
 
 
 ## Notes
