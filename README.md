@@ -53,3 +53,5 @@ Some game scenes and a simple gameplay video are below.
 
 https://user-images.githubusercontent.com/34675907/131227015-f74da507-6127-418b-8a09-d51beb3e0e35.mp4
 
+
+## Notes
