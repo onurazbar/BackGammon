@@ -14,9 +14,9 @@
 
 Game::Game() : game_finished(false)
 {
-    board.reset(new Board());
-    computer.reset(new Computer());
-    human.reset(new Human());
+    board = std::make_unique<Board>();
+    computer = std::make_shared<Computer>();
+    human = std::make_shared<Human>();
 
     computer->setOpponent(human);
     human->setOpponent(computer);
