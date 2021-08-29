@@ -14,7 +14,7 @@ int main()
 {
     std::cout << "BackGammon game!" << std::endl << std::endl;
 
-    std::unique_ptr<Game> game(new Game());
+    auto game = std::make_unique<Game>();
 
     game->play();
 
