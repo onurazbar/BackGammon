@@ -8,12 +8,12 @@
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
+#include "Color.hpp"
+#include "Disc.hpp"
+
 #include <array>
 #include <memory>
 #include <vector>
-
-#include "Color.hpp"
-#include "Disc.hpp"
 
 class Player
 {

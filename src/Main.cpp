@@ -5,10 +5,9 @@
  *
  */
 
-#include <iostream>
-#include <memory>
-
 #include "Game.hpp"
+
+#include <iostream>
 
 int main()
 {

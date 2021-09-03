@@ -5,9 +5,9 @@
  *
  */
 
-#include <iostream>
-
 #include "Player.hpp"
+
+#include <iostream>
 
 Player::Player(const ColorType& color_type) : broken_disc_count(0), disc_count(15), player_color(color_type)
 {

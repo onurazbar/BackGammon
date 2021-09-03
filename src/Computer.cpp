@@ -5,9 +5,9 @@
  *
  */
 
-#include <iostream>
-
 #include "Computer.hpp"
+
+#include <iostream>
 
 Computer::Computer(): Player(red)
 {

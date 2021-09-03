@@ -5,12 +5,11 @@
  *
  */
 
+#include "Game.hpp"
+
 #include <iostream>
-#include <memory>
 #include <cstdlib>
 #include <ctime>
-
-#include "Game.hpp"
 
 Game::Game() : game_finished(false)
 {

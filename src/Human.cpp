@@ -5,9 +5,9 @@
  *
  */
 
-#include <iostream>
-
 #include "Human.hpp"
+
+#include <iostream>
 
 Human::Human(): Player(blue)
 {

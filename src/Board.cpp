@@ -5,9 +5,9 @@
  *
  */
 
-#include <iostream>
-
 #include "Board.hpp"
+
+#include <iostream>
 
 Board::Board() : board_height(22), board_width(21)
 {

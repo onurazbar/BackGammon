@@ -8,9 +8,6 @@
 #ifndef GAME_HPP_INCLUDED
 #define GAME_HPP_INCLUDED
 
-#include <array>
-#include <vector>
-
 #include "Board.hpp"
 #include "Computer.hpp"
 #include "Human.hpp"
