@@ -60,4 +60,4 @@ Some game scenes and a simple gameplay video are below.
 
 ## Notes
 
-The game is not completed yet and I will add the missing features later. For example, broken disc conditions and computer's smart disc movements will be improved.
+The game is not completed yet and I will add the missing features later. For example, disc collection phase will be added and computer's smart disc movements will be improved.
