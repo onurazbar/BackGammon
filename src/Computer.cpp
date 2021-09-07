@@ -35,23 +35,44 @@ bool Computer::checkAndBreakOpponentDisc(std::vector<std::vector<Disc>>& disc_pl
 void Computer::makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dice)
 {
     std::cout << "Dice is " << dice << std::endl;
-    std::cout << "Press any key to let the computer makes its move according to dice value." << std::endl;
-    std::cin.get();
 
-    for (int i = disc_places.size() - 1; i >= 0; i--)
+    if (broken_disc_count > 0)
     {
-        if (!disc_places[i].empty() && (disc_places[i][0].getDiscColor() == red))
-        {
-            int position = i - dice;
+        std::cout << "Press any key to let computer get its broken disc back into play." << std::endl;
+        std::cin.get();
 
-            if (disc_places[i - dice].empty() ||
-                (!disc_places[i - dice].empty() &&
-                 (disc_places[i - dice][0].getDiscColor() == red)) ||
-                 checkAndBreakOpponentDisc(disc_places, position))
+        if (disc_places[24 - dice].empty() ||
+            (disc_places[24 - dice][0].getDiscColor() == red) ||
+            checkAndBreakOpponentDisc(disc_places, (24 - dice)))
+        {
+            disc_places[24 - dice].push_back(Disc(red));
+            broken_disc_count--;
+        }
+        else
+        {
+            std::cout << "Computer cannot get its broken disc back into play with this dice!" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Press any key to let the computer makes its move according to dice value." << std::endl;
+        std::cin.get();
+
+        for (int i = disc_places.size() - 1; i >= 0; i--)
+        {
+            if (!disc_places[i].empty() && (disc_places[i][0].getDiscColor() == red))
             {
-                disc_places[i].pop_back();
-                disc_places[i - dice].push_back(Disc(red));
-                break;
+                int position = i - dice;
+
+                if (disc_places[i - dice].empty() ||
+                    (!disc_places[i - dice].empty() &&
+                     (disc_places[i - dice][0].getDiscColor() == red)) ||
+                    checkAndBreakOpponentDisc(disc_places, position))
+                {
+                    disc_places[i].pop_back();
+                    disc_places[i - dice].push_back(Disc(red));
+                    break;
+                }
             }
         }
     }

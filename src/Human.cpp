@@ -63,23 +63,44 @@ void Human::makeMove(std::vector<std::vector<Disc>>& disc_places, const int& dic
 {
     std::cout << "Please take action according to current dice values." << std::endl;
     std::cout << "Dice is " << dice << std::endl;
-    std::cout << "Select a disc position to move a disc according to dice value." << std::endl;
 
-    int position = 0;
-    std::cin >> position;
-
-    while (!checkSelectionValid(disc_places, dice, position))
+    if (broken_disc_count > 0)
     {
-        std::cin.clear();
-        std::cin.ignore(256,'\n');
-        std::cout << std::endl << "Invalid selection! Please try again" << std::endl << std::endl;
-        std::cin >> position;
+        std::cout << "Press any key to get your broken disc back into play." << std::endl;
+        std::cin.get();
+
+        if (disc_places[dice - 1].empty() ||
+            (disc_places[dice - 1][0].getDiscColor() == blue) ||
+            checkAndBreakOpponentDisc(disc_places, (dice - 1)))
+        {
+            disc_places[dice - 1].push_back(Disc(blue));
+            broken_disc_count--;
+        }
+        else
+        {
+            std::cout << "Broken disc cannot get back into play with this dice!" << std::endl;
+        }
     }
+    else
+    {
+        std::cout << "Select a disc position to move a disc according to dice value." << std::endl;
 
-    int new_position = position + dice;
+        int position = 0;
+        std::cin >> position;
 
-    checkAndBreakOpponentDisc(disc_places, new_position);
+        while (!checkSelectionValid(disc_places, dice, position))
+        {
+            std::cin.clear();
+            std::cin.ignore(256,'\n');
+            std::cout << std::endl << "Invalid selection! Please try again." << std::endl << std::endl;
+            std::cin >> position;
+        }
 
-    disc_places[position].pop_back();
-    disc_places[position + dice].push_back(Disc(blue));
+        int new_position = position + dice;
+
+        checkAndBreakOpponentDisc(disc_places, new_position);
+
+        disc_places[position].pop_back();
+        disc_places[position + dice].push_back(Disc(blue));
+    }
 }

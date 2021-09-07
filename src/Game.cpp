@@ -128,6 +128,33 @@ void Game::initializeDiscPositions()
     disc_places.push_back(v);
 }
 
+void Game::displayBrokenDiscs()
+{
+    if (human->getBrokenDiscCount())
+    {
+        std::cout << "Your broken dics: ";
+
+        for (int i = 0; i < human->getBrokenDiscCount(); i++)
+        {
+            std::cout << blue_disc_symbol << " ";
+        }
+
+        std::cout << std::endl;
+    }
+
+    if (computer->getBrokenDiscCount())
+    {
+        std::cout << "Computer's broken dics: ";
+
+        for (int i = 0; i < computer->getBrokenDiscCount(); i++)
+        {
+            std::cout << red_disc_symbol << " ";
+        }
+
+        std::cout << std::endl;
+    }
+}
+
 void Game::updateView()
 {
     board->clearBoard();
@@ -141,6 +168,8 @@ void Game::updateView()
     }
 
     board->drawBoard();
+
+    displayBrokenDiscs();
 }
 
 void Game::rollDices()
@@ -163,7 +192,7 @@ void Game::play()
 
     updateView();
 
-    std::cout << "Blue discs that are display with B are yours, red discs belongs to computer." << std::endl;
+    std::cout << "Blue discs that are displayed with B are yours, red discs belongs to computer." << std::endl;
     std::cout << "Game will start with your round." << std::endl;
 
     while (!game_finished)
@@ -177,18 +206,6 @@ void Game::play()
         {
             human->makeMove(disc_places, i);
             updateView();
-
-            if (computer->getBrokenDiscCount())
-            {
-                std::cout << "Broken discs of the computer: ";
-
-                for (int i = 0; i < computer->getBrokenDiscCount(); i++)
-                {
-                    std::cout << red_disc_symbol << " ";
-                }
-
-                std::cout << std::endl;
-            }
         }
 
         std::cin.clear();
@@ -202,18 +219,6 @@ void Game::play()
         {
             computer->makeMove(disc_places, i);
             updateView();
-
-            if (human->getBrokenDiscCount())
-            {
-                std::cout << "Broken discs of the computer: ";
-
-                for (int i = 0; i < human->getBrokenDiscCount(); i++)
-                {
-                    std::cout << blue_disc_symbol << " ";
-                }
-
-                std::cout << std::endl;
-            }
         }
     }
 }

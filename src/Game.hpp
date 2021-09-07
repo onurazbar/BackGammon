@@ -52,6 +52,11 @@ private:
     void initializeDiscPositions();
 
     /**
+     * @brief Displays broken discs if exist.
+     */
+    void displayBrokenDiscs();
+
+    /**
      * @brief Updates game view on screen;
      */
     void updateView();
